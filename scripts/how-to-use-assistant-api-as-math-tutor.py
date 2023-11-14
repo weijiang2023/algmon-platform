@@ -1,4 +1,4 @@
-# TODO: Fix the steps
+# TODO: Fix the steps and refector the the program
 import openai as client
 
 # step 1: Create an Assistant
