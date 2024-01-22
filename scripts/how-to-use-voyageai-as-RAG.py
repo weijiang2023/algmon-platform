@@ -50,20 +50,20 @@ retrieved_doc = [documents[index] for index in retrieved_embd_index]
 
 print(retrieved_doc)
 
-import openai
+# the GEN part
+from openai import OpenAI
+
+client = OpenAI(api_key='Your API Key Here')
 
 # Initialize OpenAI API
-openai.api_key = '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'
 
 # Take the retrieved document and use it as a prompt for the text generation model
-prompt = f"Based on the information: '{retrieved_doc}', generate a response of {query}"
+prompt = f"Based on the information: '{retrieved_doc}', generate a professional response of {query}"
 
-response = openai.ChatCompletion.create(
-    model="gpt-3.5-turbo",
-    messages=[
-        {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": prompt},
-    ]
-)
+response = client.chat.completions.create(model="gpt-3.5-turbo",
+messages=[
+    {"role": "system", "content": "You are a helpful assistant."},
+    {"role": "user", "content": prompt},
+])
 
 print(response.choices[0].message.content)

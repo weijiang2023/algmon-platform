@@ -55,7 +55,6 @@ def upload_to_openai(filepath):
 st.sidebar.header("Configuration")
 api_key = st.sidebar.text_input("Enter your OpenAI API key", type="password")
 if api_key:
-    openai.api_key = api_key
 
 # Additional features in the sidebar for web scraping and file uploading
 st.sidebar.header("Additional Features")
