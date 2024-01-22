@@ -7,7 +7,7 @@ import pdfkit
 import time
 
 # Set your OpenAI Assistant ID here
-assistant_id = 'your OpenAI Assistant ID'
+assistant_id = 'asst_tss7mtsaBsxdERQGHCUHW2UI'
 
 # Initialize the OpenAI client (ensure to set your API key in the sidebar within the app)
 client = openai
@@ -37,7 +37,8 @@ def scrape_website(url):
 
 def text_to_pdf(text, filename):
     """Convert text content to a PDF file."""
-    path_wkhtmltopdf = '/usr/local/bin/wkhtmltopdf'
+    #path_wkhtmltopdf = '/usr/local/bin/wkhtmltopdf'
+    path_wkhtmltopdf = '/usr/bin/wkhtmltopdf'
     config = pdfkit.configuration(wkhtmltopdf=path_wkhtmltopdf)
     pdfkit.from_string(text, filename, configuration=config)
     return filename

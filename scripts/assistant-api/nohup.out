@@ -1,0 +1,30 @@
+
+Collecting usage statistics. To deactivate, set browser.gatherUsageStats to False.
+
+
+  You can now view your Streamlit app in your browser.
+
+  Network URL: http://10.5.115.2:8501
+  External URL: http://45.136.15.19:8501
+
+2023-11-23 01:01:31.160 Uncaught app exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/streamlit/runtime/scriptrunner/script_runner.py", line 534, in _run_script
+    exec(code, module.__dict__)
+  File "/root/Projects/algmon-platform/scripts/assistant-api/with-streamlit-ui.py", line 68, in <module>
+    scraped_text = scrape_website(website_url)
+  File "/root/Projects/algmon-platform/scripts/assistant-api/with-streamlit-ui.py", line 33, in scrape_website
+    response = requests.get(url)
+  File "/usr/local/lib/python3.10/dist-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/requests/sessions.py", line 575, in request
+    prep = self.prepare_request(req)
+  File "/usr/local/lib/python3.10/dist-packages/requests/sessions.py", line 486, in prepare_request
+    p.prepare(
+  File "/usr/local/lib/python3.10/dist-packages/requests/models.py", line 368, in prepare
+    self.prepare_url(url, params)
+  File "/usr/local/lib/python3.10/dist-packages/requests/models.py", line 439, in prepare_url
+    raise MissingSchema(
+requests.exceptions.MissingSchema: Invalid URL '1': No scheme supplied. Perhaps you meant https://1?
